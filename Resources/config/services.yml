@@ -1,0 +1,7 @@
+parameters:
+#    isdev_twitter_bootstrap.example.class: Isdev\TwitterBootstrapBundle\Example
+
+services:
+#    isdev_twitter_bootstrap.example:
+#        class: %isdev_twitter_bootstrap.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
