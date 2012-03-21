@@ -4,7 +4,7 @@ ISDev Twitter Bootstrap Bundle
 Description
 -----------
 
-Simple and easy to install [Symfony 2)](http://symfony.com/) bundle for the implementation of [Twitter Bootstrap](http://twitter.github.com/bootstrap/).
+Simple and easy to install [Symfony 2](http://symfony.com/) bundle for the implementation of [Twitter Bootstrap](http://twitter.github.com/bootstrap/).
 
 Installation
 ------------
