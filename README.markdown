@@ -9,7 +9,7 @@ Simple and easy to install [Symfony 2](http://symfony.com/) bundle for the imple
 Installation
 ------------
 
-1. Include repositories in your `deps` file:
+1 Include repository in your `deps` file:
 
 ``` ini
 [TwitterBootstrapBundle]
@@ -17,7 +17,7 @@ Installation
     target=/bundles/Isdev/TwitterBootstrapBundle
 ```
 
-2. Add namespace to your `app/autoload.php` file:
+2 Add namespace to your `app/autoload.php` file:
 
 ``` php
 <?php
@@ -28,7 +28,7 @@ $loader->registerNamespaces(array(
 ));
 ```
 
-3. Register bundle in `app/AppKernel.php` file:
+3 Register bundle in `app/AppKernel.php` file:
 
 ``` php
 <?php
@@ -44,7 +44,7 @@ public function registerBundles()
 }
 ```
 
-4. Register twig form template for whole project in `app/config/config.yml` file:
+4 Register twig form template for whole project in `app/config/config.yml` file:
 
 ``` yaml
 twig:
@@ -60,10 +60,10 @@ Or include the `fields.html.twig` in your template for a special form:
 {% form_theme special_form 'IsdevTwitterBootstrapBundle:Form:fields.html.twig' %}
 ```
 
-5. Bundle includes the basic template. For a quick start you can just inherit from it your template:
+5 Bundle includes the basic template. For a quick start you can just inherit from it your template:
 
 ``` jinja
-{% extends 'MopaBootstrapBundle::base.html.twig' %}
+{% extends "IsdevTwitterBootstrapBundle::base.html.twig" %}
 ```
 
 TO-DO list
