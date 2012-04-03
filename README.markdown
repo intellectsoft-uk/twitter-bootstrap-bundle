@@ -17,7 +17,7 @@ Installation
         target=/bundles/Isdev/TwitterBootstrapBundle
     ```
 
-    And run the vendors script to download the bundle:
+    And run the `vendors` script to download the bundle:
 
     ``` bash
     $ php bin/vendors install
