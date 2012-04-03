@@ -1,0 +1,75 @@
+{% extends 'form_div_layout.html.twig' %}
+
+
+
+{% block field_label %}
+{% spaceless %}
+    <label class="control-label" for="{{ id }}">
+        {{ label|trans }}{% if required %}<span class="required" title="{{ 'label.required_field'|trans }}">*</span>{% endif %}:
+    </label>
+{% endspaceless %}
+{% endblock field_label %}
+
+
+
+{% block field_errors %}
+{% spaceless %}
+    {% if errors|length > 0 %}
+        <span class="help-block">
+            {% for error in errors %}
+            <p>{{ error.messageTemplate|trans(error.messageParameters, 'validators') }}</p>
+            {% endfor %}
+        </span>
+    {% endif %}
+{% endspaceless %}
+{% endblock field_errors %}
+
+
+
+{% block field_row %}
+{% spaceless %}
+    {% if form.hasChildren %}
+        {{ form_widget(form) }}
+    {% else %}
+        <div class="control-group{% if errors %} error{% endif %}">
+            {{ form_label(form) }}
+            <div class="controls">
+                {{ form_widget(form) }}
+                {% if parent is defined %}
+                    {{ form_errors(parent) }}
+                {% else %}
+                    {{ form_errors(form) }}
+                {% endif %}
+            </div>
+        </div>
+    {% endif %}
+{% endspaceless %}
+{% endblock field_row %}
+
+
+
+{% block repeated_row %}
+{% spaceless %}
+    {% for child in form %}
+        {{ form_row(child, {'parent':form, 'form':child, 'errors': errors}) }}
+    {% endfor %}
+{% endspaceless %}
+{% endblock repeated_row %}
+
+
+
+{% block field_rows %}
+{% spaceless %}
+    {% import 'IsdevTwitterBootstrapBundle::flash.html.twig' as flash %}
+
+    {% if errors %}
+        {% for error in errors %}
+            {{ flash.msg('error', error.messageTemplate|trans(error.messageParameters, 'validators')) }}
+        {% endfor %}
+    {% endif %}
+
+    {% for child in form %}
+        {{ form_row(child) }}
+    {% endfor %}
+{% endspaceless %}
+{% endblock field_rows %}

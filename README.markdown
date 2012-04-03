@@ -9,9 +9,19 @@ Simple and easy to install [Symfony 2](http://symfony.com/) bundle for the imple
 Installation
 ------------
 
-1. Include repository in your `deps` file:
+1. Include repositories in your `deps` file:
 
 ``` ini
+[lessphp]
+    git=git://github.com/leafo/lessphp.git
+    target=/lessphp
+    version=v0.3.3
+
+[twitter-bootstrap]
+    git=git://github.com/twitter/bootstrap.git
+    target=/twitter/bootstrap
+    version=v2.0.2
+
 [TwitterBootstrapBundle]
     git=git://github.com/isdev/Twitter-Bootstrap-bundle.git
     target=/bundles/Isdev/TwitterBootstrapBundle
@@ -44,8 +54,35 @@ public function registerBundles()
 }
 ```
 
+4. Register assetic filter to compile [LESS](http://lesscss.org/) in the CSS in `app/config/config.yml` file:
+
+``` ini
+assetic:
+    # ...
+    filters:
+        # ...
+        lessphp:
+            file: %kernel.root_dir%/../vendor/lessphp/lessc.inc.php
+            apply_to: "\.less$"
+```
+
+5. Register twig form template for whole project in `app/config/config.yml` file:
+
+``` ini
+twig:
+    # ...
+    form:
+        resources:
+            - 'IsdevTwitterBootstrapBundle:Form:fields.html.twig'
+```
+
+Or include the `fields.html.twig` in your template for a special form:
+
+``` jinja
+{% form_theme special_form 'IsdevTwitterBootstrapBundle:Form:fields.html.twig' %}
+```
+
 TO-DO list
 ----------
 
-- check asseter less filter in php
 - form template

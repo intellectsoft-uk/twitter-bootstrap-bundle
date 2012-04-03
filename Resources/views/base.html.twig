@@ -5,9 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% block head_style -%}
         {% stylesheets filter='?cssembed,?yui_css'
-           '@IsdevTwitterBootstrapBundle/Resources/public/less/bootstrap.less'
            '@IsdevTwitterBootstrapBundle/Resources/public/bootstrap/css/bootstrap.css'
            '@IsdevTwitterBootstrapBundle/Resources/public/bootstrap/css/bootstrap-responsive.css'
+           '@IsdevTwitterBootstrapBundle/Resources/public/less/bootstrap.less'
         %}<link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />{% endstylesheets %}
     {% endblock head_style %}
     {% block head_script %}{# Append JavaScript at the bottom for fast page loading except in special cases. #}{% endblock head_script %}
@@ -37,7 +37,7 @@
                 <strong>Hier könnte Ihre Werbung stehen ... </strong>
             </div>
             {% endblock content %}
-        </div> {# /.content #}
+        </div>{# /.content #}
 
         <footer>
 	        {% block footer %}
@@ -45,7 +45,7 @@
 	        {% endblock footer %}
         </footer>
 	{% endblock container %}
-    </div> {# /.container #}
+    </div>{# /.container #}
 
 	{% block foot_script -%}
         {% javascripts filter="?yui_js"
