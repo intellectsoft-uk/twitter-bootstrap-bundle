@@ -17,6 +17,12 @@ Installation
         target=/bundles/Isdev/TwitterBootstrapBundle
     ```
 
+    And run the vendors script to download the bundle:
+
+    ``` bash
+    $ php bin/vendors install
+    ```
+
 2. Add namespace to your `app/autoload.php` file:
 
     ``` php
@@ -37,7 +43,7 @@ Installation
     {
         $bundles = array(
             // ...
-            new Isdev\TwitterBootstrapBundle\IsdevTwitterBootstrapBundle()
+            new Isdev\TwitterBootstrapBundle\IsdevTwitterBootstrapBundle(),
         );
         // ...
         return $bundles;
