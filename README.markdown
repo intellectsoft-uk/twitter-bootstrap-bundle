@@ -4,7 +4,7 @@ ISDev Twitter Bootstrap Bundle (lessphp branch)
 Warning
 -------
 
-The current version of [lessphp](http://leafo.net/lessphp/) (0.3.3) does not support all of the syntax used in twitter bootstrap less files.
+The current version of [lessphp](http://leafo.net/lessphp/) (0.3.3) does not support all of the syntax used in twitter bootstrap less files. Therefore, you *must refrain from the use of the current branch or use an older version of twitter bootstrap*.
 
 Description
 -----------
@@ -61,7 +61,7 @@ Installation
 
 4. Register assetic filter to compile [LESS](http://lesscss.org/) in the CSS in `app/config/config.yml` file:
 
-    ``` ini
+    ``` yaml
     assetic:
         # ...
         filters:
