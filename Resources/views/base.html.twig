@@ -18,6 +18,8 @@
 {% block body %}
     <div class="container">
 	{% block container %}
+        {% block navbar %}{% include 'IsdevTwitterBootstrapBundle::navbar.html.twig' %}{% endblock navbar %}
+
         <header>
             {% block header %}
             <div class="page-header">
