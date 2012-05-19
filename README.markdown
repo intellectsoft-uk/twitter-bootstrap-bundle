@@ -1,11 +1,6 @@
 ISDev Twitter Bootstrap Bundle (lessphp branch)
 ===============================================
 
-Warning
--------
-
-The current version of [lessphp](http://leafo.net/lessphp/) (0.3.3) does not support all of the syntax used in twitter bootstrap less files. Therefore, **you must refrain from the use of the current branch or use an older version of twitter bootstrap**.
-
 Description
 -----------
 
@@ -20,16 +15,17 @@ Installation
     [lessphp]
         git=git://github.com/leafo/lessphp.git
         target=/lessphp
-        version=v0.3.3
+        version=v0.3.4-2
 
     [twitter-bootstrap]
         git=git://github.com/twitter/bootstrap.git
         target=/twitter/bootstrap
-        version=v2.0.2
+        version=v2.0.3
 
     [TwitterBootstrapBundle]
         git=git://github.com/isdev/Twitter-Bootstrap-bundle.git
         target=/bundles/Isdev/TwitterBootstrapBundle
+        version=origin/master-lessphp
     ```
 
 2. Add namespace to your `app/autoload.php` file:
@@ -97,4 +93,3 @@ TO-DO list
 ----------
 
 - refine form template
-- fix lessphp
