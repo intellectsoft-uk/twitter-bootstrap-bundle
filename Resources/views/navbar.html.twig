@@ -1,0 +1,32 @@
+<div class="navbar">
+    <div class="navbar-inner">
+        <div class="container">
+            {% block navbar_brand %}
+                <a class="brand" href="#">Twitter Bootstrap Bundle</a>
+            {% endblock navbar_brand %}
+
+            <div class="nav-collapse">
+                {% block navbar_collapse %}
+                    <ul class="nav">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Link 1</a></li>
+                        <li><a href="#">Link 2</a></li>
+                    </ul>
+
+                    <ul class="nav pull-right">
+                        <li class="dropdown">
+                            <a data-toggle="dropdown" class="dropdown-toggle" href="#">Dropdown <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Link 3</a></li>
+                                <li><a href="#">Link 4</a></li>
+                                <li><a href="#">Link 5</a></li>
+                                <li class="divider"></li>
+                                <li><a href="#">Link 6</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                {% endblock navbar_collapse %}
+            </div>
+        </div>
+    </div>
+</div>
