@@ -34,7 +34,21 @@ Installation
     $ php bin/vendors install
     ```
 
-2. Add namespace to your `app/autoload.php` file:
+2. Copy file `variables.less` in folder `app/Resources/styles/twitter`:
+
+    ``` bash
+    $ mkdir -p app/Resources/styles/twitter
+    $ cp vendor/twitter/bootstrap/less/variables.less app/Resources/styles/twitter/variables.less
+    ```
+
+    And set variables values in `app/Resources/styles/twitter/variables.less`:
+
+    ``` less
+    @iconSpritePath:      "../../../../../../twitter/bootstrap/img/glyphicons-halflings.png";
+    @iconWhiteSpritePath: "../../../../../../twitter/bootstrap/img/glyphicons-halflings-white.png";
+    ```
+
+3. Add namespace to your `app/autoload.php` file:
 
     ``` php
     <?php
@@ -45,7 +59,7 @@ Installation
     ));
     ```
 
-3. Register bundle in `app/AppKernel.php` file:
+4. Register bundle in `app/AppKernel.php` file:
 
     ``` php
     <?php
@@ -61,7 +75,7 @@ Installation
     }
     ```
 
-4. Register assetic filter to compile [LESS](http://lesscss.org/) in the CSS in `app/config/config.yml` file:
+5. Register assetic filter to compile [LESS](http://lesscss.org/) in the CSS in `app/config/config.yml` file:
 
     ``` yaml
     assetic:
@@ -69,18 +83,17 @@ Installation
         filters:
             # ...
             lessphp:
-                file: %kernel.root_dir%/../vendor/lessphp/lessc.inc.php
-                apply_to: "\.less$"
+                file: "%kernel.root_dir%/../vendor/lessphp/lessc.inc.php"
     ```
 
-5. Register twig form template for whole project in `app/config/config.yml` file:
+6. Register twig form template for whole project in `app/config/config.yml` file:
 
     ``` yaml
     twig:
         # ...
         form:
             resources:
-                - 'IsdevTwitterBootstrapBundle:Form:fields.html.twig'
+                - "IsdevTwitterBootstrapBundle:Form:fields.html.twig"
     ```
 
     Or include the `fields.html.twig` in your template for a special form:
@@ -89,10 +102,10 @@ Installation
     {% form_theme special_form 'IsdevTwitterBootstrapBundle:Form:fields.html.twig' %}
     ```
 
-6. Bundle includes the basic template. For a quick start you can just inherit from it your template:
+7. Bundle includes the basic template. For a quick start you can just inherit from it your template:
 
     ``` jinja
-    {% extends "IsdevTwitterBootstrapBundle::base.html.twig" %}
+    {% extends 'IsdevTwitterBootstrapBundle::base.html.twig' %}
     ```
 
 TO-DO list

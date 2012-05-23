@@ -4,9 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     {% block head_style -%}
-        {% stylesheets filter='?cssembed,?yui_css, lessphp'
-           '@IsdevTwitterBootstrapBundle/Resources/public/less/bootstrap.less'
-           '@IsdevTwitterBootstrapBundle/Resources/public/less/custom.less'
+        {% stylesheets filter='lessphp,?cssembed,?yui_css'
+            "@IsdevTwitterBootstrapBundle/Resources/public/less/bootstrap.less"
+            "@IsdevTwitterBootstrapBundle/Resources/public/less/responsive.less"
+            "@IsdevTwitterBootstrapBundle/Resources/public/less/custom.less"
         %}<link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />{% endstylesheets %}
     {% endblock head_style %}
     {% block head_script %}{# Append JavaScript at the bottom for fast page loading except in special cases. #}{% endblock head_script %}
@@ -51,6 +52,18 @@
 	{% block foot_script -%}
         {% javascripts filter="?yui_js"
             'http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js'
+            '../vendor/twitter/bootstrap/js/bootstrap-transition.js'
+            '../vendor/twitter/bootstrap/js/bootstrap-modal.js'
+            '../vendor/twitter/bootstrap/js/bootstrap-dropdown.js'
+            '../vendor/twitter/bootstrap/js/bootstrap-scrollspy.js'
+            '../vendor/twitter/bootstrap/js/bootstrap-tab.js'
+            '../vendor/twitter/bootstrap/js/bootstrap-tooltip.js'
+            '../vendor/twitter/bootstrap/js/bootstrap-popover.js'
+            '../vendor/twitter/bootstrap/js/bootstrap-alert.js'
+            '../vendor/twitter/bootstrap/js/bootstrap-button.js'
+            '../vendor/twitter/bootstrap/js/bootstrap-collapse.js'
+            '../vendor/twitter/bootstrap/js/bootstrap-carousel.js'
+            '../vendor/twitter/bootstrap/js/bootstrap-typeahead.js'
         %}<script type="text/javascript" src="{{ asset_url }}"></script>{% endjavascripts %}
     {% endblock foot_script %}
 {% endblock body %}
